@@ -2,6 +2,8 @@
 
 A PHP REST server for providing a very light-weight REST API. Very easy to set up and get going. Independent from other libraries and frameworks. Supports HTTP authentication.
 
+This has been forked from jacwright/RestServer and kevjett/RestServer to stabilize a version for package usage that isn't reliant on a dev-master floating reference
+
 ## Simple REST server in PHP
 
 After building a couple of RESTful services using the [Zend Framework](http://framework.zend.com/), I decided to create a dead simple REST server that allowed me to skip all the features I didn’t need as well as a **tons of classes** that came with Zend Framework MVC. There are still useful features to add (XML support for example), but overall I’m quite happy with what I’ve come up with.
@@ -214,19 +216,19 @@ You have control over how your REST service handles errors. You can add an error
 
 # Installation
 
-## By [Hand](https://github.com/jacwright/RestServer)
+## By [Hand](https://github.com/operatoroverload/RestServer)
 
 ```
 cd <your project>
-mkdir -p vendor/jacwright/RestServer
-cd vendor/jacwright/RestServer
-git clone https://github.com/jacwright/RestServer .
+mkdir -p vendor/operatoroverload/RestServer
+cd vendor/operatoroverload/RestServer
+git clone https://github.com/operatoroverload/RestServer .
 composer install
 ```
 
-## By [Packagist](https://packagist.org/packages/jacwright/restserver)
+## By [Packagist](https://packagist.org/packages/operatoroverload/RestServer)
 
 ```
 cd <your project>
-composer require 'jacwright/restserver:dev-master'
+composer require 'operatoroverload/RestServer:dev-master'
 ```
