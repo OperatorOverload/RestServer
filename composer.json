@@ -1,9 +1,9 @@
 {
-    "name": "operatoroverload/restserver",
+    "name": "operatoroverload/RestServer",
     "type": "library",
     "description": "php rest server for very light-weight REST APIs, forked from jacwright/RestServer and kevjett/RestServer to stabilize a version",
         "require": {
-        "php": "^5.6|~7|~8"
+            "php": "^7.0 || ^8.0"
     },
     "keywords": ["php", "rest", "rest-server", "light-weight", "http", "json", "mit"],
     "homepage": "https://github.com/OperatorOverload/RestServer",
@@ -18,8 +18,8 @@
     ],
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": {
-            "Jacwright\\RestServer": "source/"
+        "psr-4": {
+            "operatoroverload\\RestServer\\": "src/"
         }
     }
 }

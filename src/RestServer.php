@@ -23,7 +23,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-namespace Jacwright\RestServer;
+namespace operatoroverload\RestServer;
 
 require_once(__DIR__ . '/RestFormat.php');
 require_once(__DIR__ . '/RestException.php');
@@ -89,13 +89,13 @@ class RestServer {
 		$this->root = $dir;
 
 		// For backwards compatability, register HTTPAuthServer
-		$this->setAuthHandler(new \Jacwright\RestServer\Auth\HTTPAuthServer);
+		$this->setAuthHandler(new \operatoroverload\RestServer\Auth\HTTPAuthServer);
 	}
 
 	public function  __destruct() {
 		if ($this->mode == 'production' && !$this->cached) {
-			if (function_exists('apc_store')) {
-				apc_store('urlMap', $this->map);
+			if (function_exists('apcU_store')) {
+				apcu_store('urlMap', $this->map);
 			} else {
 				file_put_contents($this->cacheDir . '/urlMap.cache', serialize($this->map));
 			}
@@ -283,8 +283,8 @@ class RestServer {
 		$this->cached = false;
 
 		if ($this->mode == 'production') {
-			if (function_exists('apc_fetch')) {
-				$map = apc_fetch('urlMap');
+			if (function_exists('apcu_fetch')) {
+				$map = apcu_fetch('urlMap');
 			} else if (file_exists($this->cacheDir . '/urlMap.cache')) {
 				$map = unserialize(file_get_contents($this->cacheDir . '/urlMap.cache'));
 			}
@@ -294,8 +294,8 @@ class RestServer {
 				$this->cached = true;
 			}
 		} else {
-			if (function_exists('apc_delete')) {
-				apc_delete('urlMap');
+			if (function_exists('apcu_delete')) {
+				apcu_delete('urlMap');
 			} else {
 				if (file_exists($this->cacheDir . '/urlMap.cache')) {
 					unlink($this->cacheDir . '/urlMap.cache');

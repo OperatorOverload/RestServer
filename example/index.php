@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__ . '/../source/Jacwright/RestServer/RestServer.php';
+require __DIR__ . '/../src/RestServer.php';
 require 'TestController.php';
 
-$server = new \Jacwright\RestServer\RestServer('debug');
+$server = new \operatoroverload\RestServer\RestServer('debug');
 $server->addClass('TestController');
 $server->handle();

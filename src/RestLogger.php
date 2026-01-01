@@ -1,5 +1,5 @@
 <?php
-namespace Jacwright\RestServer;
+namespace operatoroverload\RestServer;
 
 interface RestLogger {
 	/**
