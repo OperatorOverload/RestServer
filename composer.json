@@ -1,5 +1,5 @@
 {
-    "name": "operatoroverload/RestServer",
+    "name": "operatoroverload/restserver",
     "type": "library",
     "description": "php rest server for very light-weight REST APIs, forked from jacwright/RestServer and kevjett/RestServer to stabilize a version",
         "require": {
